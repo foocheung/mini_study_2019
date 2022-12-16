@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+
+snakemake  -j 50  --cluster-config cluster_config_threaded.json --cluster "qsub -terse -l quick,avx2,mem_free={cluster.mem_free},h_vmem={cluster.h_vmem} {cluster.parallel_opts}" -s Snakefile --use-conda -c10 --conda-frontend mamba 
+
